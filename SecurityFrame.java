@@ -1,3 +1,5 @@
+package Frame;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -9,15 +11,20 @@ public class SecurityFrame extends JFrame {
     JPanel jPanel4 = new JPanel();
 
     JLabel jLabel1 = new JLabel("Security Account");
-    JLabel jLabel2 = new JLabel("You current have 500$ in your security account");
+    JLabel jLabel2 = new JLabel("You current have 500$");
     JLabel jLabel3 = new JLabel("Unrealized benefit");
     JLabel jLabel4 = new JLabel("Realized benefit");
+
+    JTextField jTextField = new JTextField();
+
     JButton jButton1 = new JButton("Check Stock");
     JButton jButton2 = new JButton("Check Bonds");
     JButton jButton3 = new JButton("Buy Stock");
     JButton jButton4 = new JButton("Buy Bonds");;
-    JButton jButton5 = new JButton("Transfer Between");
+    JButton jButton5 = new JButton("Transfer");
     JButton jButton6 = new JButton("Log out");
+
+
 
 
     SecurityFrame(){
@@ -29,11 +36,6 @@ public class SecurityFrame extends JFrame {
         jPanel3.setBounds(0,300,800,150);
         jPanel4.setBounds(0,450,800,150);
 
-//        jPanel1.setBackground(Color.BLACK);
-//        jPanel2.setBackground(Color.BLUE);
-//        jPanel3.setBackground(Color.YELLOW);
-//        jPanel4.setBackground(Color.GREEN);
-
         jPanel1.setLayout(null);
         jLabel1.setBounds(50,0,400,150);
         jLabel1.setFont(new Font("Dialog",1,30));
@@ -42,10 +44,14 @@ public class SecurityFrame extends JFrame {
         jPanel1.add(jButton6);
 
         jPanel2.setLayout(null);
-        jLabel2.setBounds(50,0,400,150);
+        jLabel2.setBounds(50,0,300,150);
         jLabel2.setFont(new Font("Dialog",0,15));
+
+        jTextField.setBounds(250,65,200,20);
+
         jButton5.setBounds(500,37,200,75);
         jPanel2.add(jLabel2);
+        jPanel2.add(jTextField);
         jPanel2.add(jButton5);
 
         jPanel3.setLayout(new GridLayout(1,4,100,50));
