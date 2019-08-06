@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 
-public class LoanFrame {
+public class InitializeCollateralFrame {
 
 	private JFrame frame;
 	private JTextField textField;
@@ -19,7 +19,7 @@ public class LoanFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LoanFrame window = new LoanFrame();
+					InitializeCollateralFrame window = new InitializeCollateralFrame();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -31,7 +31,7 @@ public class LoanFrame {
 	/**
 	 * Create the application.
 	 */
-	public LoanFrame() {
+	public InitializeCollateralFrame() {
 		initialize();
 	}
 
@@ -50,7 +50,7 @@ public class LoanFrame {
 		frame.getContentPane().add(button);
 		
 		textField = new JTextField();
-		textField.setBounds(182, 227, 236, 39);
+		textField.setBounds(275, 273, 236, 39);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
@@ -62,26 +62,8 @@ public class LoanFrame {
 		button_1.setBounds(571, 86, 171, 41);
 		frame.getContentPane().add(button_1);
 		
-		JButton btnBorrow = new JButton("Borrow");
-		btnBorrow.setBounds(434, 226, 171, 41);
-		frame.getContentPane().add(btnBorrow);
-		
-		JButton button_2 = new JButton("Pay Back");
-		button_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		button_2.setBounds(309, 296, 171, 41);
-		frame.getContentPane().add(button_2);
-
-		JLabel lblNewLabel = new JLabel("You currently owe:) + lblNewLabel");
-		lblNewLabel.setBounds(182, 168, 331, 41);
-		frame.getContentPane().add(lblNewLabel);
-		
-		btnBorrow.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				double change = Double.parseDouble(textField.getText());
-			}
-		});
+		JLabel lblEnterAmount = new JLabel("Enter Initial Collateral Amount:");
+		lblEnterAmount.setBounds(213, 215, 370, 41);
+		frame.getContentPane().add(lblEnterAmount);
 	}
 }

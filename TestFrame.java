@@ -1,30 +1,27 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import java.awt.BorderLayout;
-import javax.swing.JTextField;
-import javax.swing.JPasswordField;
-import javax.swing.JButton;
-import javax.swing.SwingConstants;
 import javax.swing.JLabel;
-import javax.swing.JTextPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JSpinner;
+
 import java.awt.Font;
-import java.awt.Color;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
+import javax.swing.SpinnerDateModel;
+import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.awt.event.ActionEvent;
-import java.awt.Panel;
-import javax.swing.JSpinner;
-import javax.swing.SpinnerDateModel;
-import java.util.Date;
-import java.util.Calendar;
-import java.awt.SystemColor;
 
-public class LogInFrame {
+public class TestFrame {
 
 	private JFrame frame;
-	private JPasswordField passwordField;
+	private JTextField textField;
+	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
@@ -33,7 +30,7 @@ public class LogInFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LogInFrame window = new LogInFrame();
+					TestFrame window = new TestFrame();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -45,7 +42,7 @@ public class LogInFrame {
 	/**
 	 * Create the application.
 	 */
-	public LogInFrame() {
+	public TestFrame() {
 		initialize();
 	}
 
@@ -84,9 +81,7 @@ public class LogInFrame {
 		lblNewLabel_1.setBounds(163, 283, 128, 33);
 		panel.add(lblNewLabel_1);
 		
-		passwordField = new JPasswordField();
-		passwordField.setBounds(317, 282, 233, 34);
-		panel.add(passwordField);
+
 		
 		JLabel lblDontHaveAn = new JLabel("Don't have an account? Register here");
 		lblDontHaveAn.setForeground(Color.CYAN);
@@ -111,8 +106,6 @@ public class LogInFrame {
 		lblEnterCurrentDate.setBounds(163, 378, 128, 33);
 		panel.add(lblEnterCurrentDate);
 		
-		btnNextDay.setBounds(514, 383, 128, 38);
-		panel.add(btnNextDay);
 		
 		JLabel lblWarningSignTriggers = new JLabel("Warning Sign triggers");
 		lblWarningSignTriggers.setForeground(Color.RED);
@@ -124,36 +117,14 @@ public class LogInFrame {
 		JSpinner spinner  = new JSpinner(new SpinnerDateModel());
 		spinner.setEditor(new JSpinner.DateEditor(spinner, model.toPattern()));
 		spinner.setBounds(328, 378, 144, 44);
-		int day =spinner.getValue();
 		panel.add(spinner);
-		
-		
-		
+
 		btnEnter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String username = textPane.getText();
-				String password = passwordField.getText();
-				if(checkManagerIdentity(username, password) != null) {
-					//OPEN NEW JFRAME FOR MANAGER
-					frame.dispose();
-				}
-				else if(checkInvestorIdentity(username, password) !- null) {
-					//OPEN NEW JFRAME FOR INVESTOR
-					
-					frame.dispose();
-				}
-				else
-					lblWarningSignTriggers.setText("This Account does not Exist");
+				System.out.println(spinner.getComponents().toString());
 			}
 		});
 		
-		JButton btnNextDay = new JButton("Next Day");
-		btnNextDay.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNextDay.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-			}
-		});
 		
 	}
 }
