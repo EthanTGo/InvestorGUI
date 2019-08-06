@@ -98,11 +98,6 @@ public class LogInFrame {
 		btnEnter.setBounds(348, 450, 102, 31);
 		panel.add(btnEnter);
 		
-		btnEnter.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
 		
 		JLabel lblTodayIs = new JLabel("Today is 12/12/2012");
 		lblTodayIs.setForeground(Color.WHITE);
@@ -116,12 +111,6 @@ public class LogInFrame {
 		lblEnterCurrentDate.setBounds(163, 378, 128, 33);
 		panel.add(lblEnterCurrentDate);
 		
-		JButton btnNextDay = new JButton("Next Day");
-		btnNextDay.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnNextDay.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
 		btnNextDay.setBounds(514, 383, 128, 38);
 		panel.add(btnNextDay);
 		
@@ -136,5 +125,32 @@ public class LogInFrame {
 		spinner.setEditor(new JSpinner.DateEditor(spinner, model.toPattern()));
 		spinner.setBounds(328, 378, 144, 44);
 		panel.add(spinner);
+		
+		btnEnter.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String username = textPane.getText();
+				String password = passwordField.getText();
+				if(checkManagerIdentity(username, password) != null) {
+					//OPEN NEW JFRAME FOR MANAGER
+					frame.dispose();
+				}
+				else if(checkInvestorIdentity(username, password) !- null) {
+					//OPEN NEW JFRAME FOR INVESTOR
+					
+					frame.dispose();
+				}
+				else
+					lblWarningSignTriggers.setText("This Account does not Exist");
+			}
+		});
+		
+		JButton btnNextDay = new JButton("Next Day");
+		btnNextDay.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnNextDay.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
+		
 	}
 }
