@@ -1,3 +1,4 @@
+package Frame;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
