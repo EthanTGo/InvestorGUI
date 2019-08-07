@@ -1,10 +1,12 @@
-//package Frame;
+package Frame;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 
-public class CustomerFrame extends JFrame {
+public class CustomerFrame extends JFrame implements ActionListener {
 
     JPanel jPanel1 = new JPanel();
     JPanel jPanel2 = new JPanel();
@@ -74,6 +76,13 @@ public class CustomerFrame extends JFrame {
         this.add(jPanel3);
         this.add(jPanel4);
 
+        jButton1.addActionListener(this);
+        jButton2.addActionListener(this);
+        jButton3.addActionListener(this);
+        jButton4.addActionListener(this);
+        jButton5.addActionListener(this);
+        jButton6.addActionListener(this);
+
         this.setLayout(null);
         this.setBounds(300,100,800,600);
         this.setResizable(false);
@@ -89,5 +98,20 @@ public class CustomerFrame extends JFrame {
     }
 
 
-
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource()==jButton1){
+            System.out.println("Log out");
+        }else if (e.getSource()==jButton2){
+            System.out.println("Next day");
+        }else if (e.getSource()==jButton3){
+            System.out.println("Checking Account");
+        }else if (e.getSource()==jButton4){
+            System.out.println("Saving Account");
+        }else if (e.getSource()==jButton5){
+            System.out.println("Security Account");
+        }else if (e.getSource()==jButton6){
+            System.out.println("Loans");
+        }
+    }
 }

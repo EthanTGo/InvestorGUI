@@ -1,9 +1,11 @@
-//package Frame;
+package Frame;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class BondInformationFrame extends JFrame {
+public class BondInformationFrame extends JFrame implements ActionListener {
 
     JPanel jPanel1 = new JPanel();
     JPanel jPanel2 = new JPanel();
@@ -22,9 +24,6 @@ public class BondInformationFrame extends JFrame {
 
         this.setLayout(new GridLayout(1,2,0,0));
 
-//        jPanel4.setBackground(Color.RED);
-//        jPanel3.setBackground(Color.GREEN);
-//        jPanel5.setBackground(Color.BLUE);
 
         jPanel1.setLayout(null);
         jTextArea.setBounds(50,100,300,400);
@@ -43,7 +42,8 @@ public class BondInformationFrame extends JFrame {
         jPanel2.add(jButton2);
 
 
-
+        jButton1.addActionListener(this);
+        jButton2.addActionListener(this);
 
         this.add(jPanel1);
         this.add(jPanel2);
@@ -60,4 +60,14 @@ public class BondInformationFrame extends JFrame {
 
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+        if (e.getSource()==jButton1){
+            System.out.println("cancel");
+        } else if (e.getSource()==jButton2){
+            System.out.println("sell");
+        }
+
+    }
 }

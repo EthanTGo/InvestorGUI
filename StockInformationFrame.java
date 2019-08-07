@@ -11,6 +11,7 @@ public class StockInformationFrame extends JFrame {
     JPanel jPanel4 = new JPanel();
     JPanel jPanel5 = new JPanel();
 
+    JLabel jLabel0 = new JLabel("Information of Your Stocks");
     JLabel jLabel1 = new JLabel("Ticker");
     JLabel jLabel2 = new JLabel("Amount");
 
@@ -33,7 +34,9 @@ public class StockInformationFrame extends JFrame {
 //        jPanel5.setBackground(Color.BLUE);
 
         jPanel1.setLayout(null);
+        jLabel0.setBounds(50,10,300,100);
         jTextArea.setBounds(50,100,300,400);
+        jPanel1.add(jLabel0);
         jPanel1.add(jTextArea);
 
         jPanel3.setLayout(null);
